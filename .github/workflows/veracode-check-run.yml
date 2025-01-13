@@ -59,7 +59,7 @@ jobs:
           INPUT_DETAILS_URL: "https://github.com/${{ github.repository }}/actions/runs/${{ inputs.run_id }}"
       - name: Print Clone URL
         run: |
-          REPO_URL="https://github.com/${GITHUB_REPOSITORY}.git"
+          REPO_URL="${{ github.server_url }}/${{ github.repository }}"
           echo "Clone URL: $REPO_URL"
       - name: Create metadata
         id: create-metadata-json
